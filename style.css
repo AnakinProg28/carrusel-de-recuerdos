@@ -1,0 +1,128 @@
+body {
+    background-color: #000; /* Fondo Negro */
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+    overflow: hidden;
+    font-family: sans-serif;
+}
+
+/* --- BURBUJAS ASCENDENTES --- */
+.bubbles-container {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 1; /* Detrás de todo */
+    pointer-events: none;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px;
+    background: #ffffff !important;
+    border-radius: 50%;
+    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.8);
+    animation: moveUp linear infinite;
+}
+
+@keyframes moveUp {
+    to { transform: translateY(-110vh); opacity: 0; }
+}
+
+/* --- CARRUSEL 3D --- */
+.scene {
+    width: 210px; height: 140px;
+    position: relative;
+    transform-style: preserve-3d;
+    z-index: 10;
+}
+
+.carousel {
+    width: 100%; height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: spin 25s linear infinite; /* GIRO AUTOMÁTICO */
+}
+
+@keyframes spin {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
+
+.carousel__cell {
+    position: absolute;
+    width: 190px; height: 120px;
+    left: 10px; top: 10px;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.carousel__cell:hover {
+    box-shadow: 0 0 20px #fff;
+}
+
+/* Distribución de las 8 fotos */
+.carousel__cell:nth-child(1) { transform: rotateY(0deg) translateZ(350px); }
+.carousel__cell:nth-child(2) { transform: rotateY(45deg) translateZ(350px); }
+.carousel__cell:nth-child(3) { transform: rotateY(90deg) translateZ(350px); }
+.carousel__cell:nth-child(4) { transform: rotateY(135deg) translateZ(350px); }
+.carousel__cell:nth-child(5) { transform: rotateY(180deg) translateZ(350px); }
+.carousel__cell:nth-child(6) { transform: rotateY(225deg) translateZ(350px); }
+.carousel__cell:nth-child(7) { transform: rotateY(270deg) translateZ(350px); }
+.carousel__cell:nth-child(8) { transform: rotateY(315deg) translateZ(350px); }
+
+.carousel__cell img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.8s ease; }
+
+/* --- MODAL (ZOOM) --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.95);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 85%;
+    max-height: 85%;
+    margin-top: 3%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 30px rgba(255,255,255,0.5);
+    animation: zoomIn 0.3s;
+}
+
+@keyframes zoomIn { from {transform: scale(0.7)} to {transform: scale(1)} }
+
+.close {
+    position: absolute;
+    top: 20px; right: 35px;
+    color: #fff; font-size: 50px; cursor: pointer;
+}
+
+.frases-container {
+    position: fixed;
+    bottom: 50px; /* Separación del suelo */
+    width: 80%;
+    text-align: center;
+    z-index: 20; /* Por encima de las burbujas */
+    pointer-events: none;
+}
+
+#frase-despedida {
+    font-family: 'Georgia', serif; /* O una fuente cursiva si prefieres */
+    font-style: italic;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 0 10px rgba(255, 111, 145, 0.5); /* Un brillo sutil rosado/blanco */
+    transition: opacity 1s ease-in-out; /* Para que el cambio de frase sea suave */
+    max-width: 600px;
+    margin: 0 auto;
+}

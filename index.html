@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Nuestros Recuerdos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scene">
+        <div class="carousel">
+            <div class="carousel__cell"><img src="images/img1.jpg" onclick="zoomImg(this)"></div>
+            <div class="carousel__cell"><img src="images/img2.jpg" onclick="zoomImg(this)"></div>
+            <div class="carousel__cell"><img src="images/img3.jpg" onclick="zoomImg(this)"></div>
+            <div class="carousel__cell"><img src="images/img4.jpg" onclick="zoomImg(this)"></div>
+            <div class="carousel__cell"><img src="images/img5.jpg" onclick="zoomImg(this)"></div>
+            <div class="carousel__cell"><img src="images/img6.jpg" onclick="zoomImg(this)"></div>
+            <div class="carousel__cell"><img src="images/img7.jpg" onclick="zoomImg(this)"></div>
+            <div class="carousel__cell"><img src="images/img8.jpg" onclick="zoomImg(this)"></div>
+            <div class="carousel__cell"><img src="images/img9.jpg" onclick="zoomImg(this)"></div>
+            <div class="carousel__cell"><img src="images/img10.jpg" onclick="zoomImg(this)"></div>
+            <div class="carousel__cell"><img src="images/img11.jpg" onclick="zoomImg(this)"></div>
+            <div class="carousel__cell"><img src="images/img12.jpeg" onclick="zoomImg(this)"></div>
+            <div class="carousel__cell"><img src="images/img13.jpeg" onclick="zoomImg(this)"></div>
+            
+            </div>
+        </div>
+    </div>
+
+    <div id="modal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="fullImg">
+    </div>
+
+    <div class="frases-container">
+        <p id="frase-despedida">Te amo, y precisamente porque te amo, te dejo ir...</p>
+    </div>
+
+    <div class="bubbles-container" id="bubbles"></div>
+
+    <script src="script.js"></script>
+</body>
+<audio id="musicaFondo" loop>
+    <source src="Botella Tras Botella-Regional Mexicano Topic (1).mp3" type="audio/mpeg">
+    Tu navegador no soporta el elemento de audio.
+</audio>
+</html>
