@@ -8,6 +8,8 @@ body {
     perspective: 1000px;
     overflow: hidden;
     font-family: sans-serif;
+    overflow: hidden;
+    touch-action:manipulation;
 }
 
 /* --- BURBUJAS ASCENDENTES --- */
@@ -142,3 +144,4 @@ body {
         transform: scale(0.7); /* Reducimos un poco el carrusel en móvil para que quepa todo */
     }
 }
+
