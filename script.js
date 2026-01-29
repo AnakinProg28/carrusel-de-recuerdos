@@ -3,7 +3,7 @@
 const carpeta = "images/";
 
 const nombresArchivos = [
-    "", "img2.jpg", "img3.jpg", "img4.jpg",
+    "img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg",
     "img5.jpg", "img6.jpg", "img7.jpg", "img8.jpg",
     "img9.jpg", "img10.jpg", "img11.jpg", "img12.jpeg", "img13.jpeg",
 ];
@@ -109,4 +109,5 @@ function cambiarFrase() {
         elementoFrase.style.opacity = 1;
     }, 1000);
 }
+
 setInterval(cambiarFrase, 6000);
