@@ -109,8 +109,10 @@ body {
 
 .frases-container {
     position: fixed;
-    bottom: 50px; /* Separación del suelo */
-    width: 80%;
+    bottom: 80px; /* Separación del suelo */
+    lef: 50%;
+    transform: traslatex(-50%);
+    width: 90%;
     text-align: center;
     z-index: 20; /* Por encima de las burbujas */
     pointer-events: none;
@@ -119,10 +121,24 @@ body {
 #frase-despedida {
     font-family: 'Georgia', serif; /* O una fuente cursiva si prefieres */
     font-style: italic;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: rgba(255, 255, 255, 0.9);
     text-shadow: 0 0 10px rgba(255, 111, 145, 0.5); /* Un brillo sutil rosado/blanco */
     transition: opacity 1s ease-in-out; /* Para que el cambio de frase sea suave */
     max-width: 600px;
     margin: 0 auto;
+
+}
+/* --- AJUSTE PARA CELULARES --- */
+@media (max-width: 600px) {
+    .frases-container {
+        bottom: 40px; /* Ajuste para que no choque con el borde */
+    }
+    #frase-despedida {
+        font-size: 1rem; /* Letra un poco más pequeña para que no se corte */
+        line-height: 1.4;
+    }
+    .scene {
+        transform: scale(0.7); /* Reducimos un poco el carrusel en móvil para que quepa todo */
+    }
 }
